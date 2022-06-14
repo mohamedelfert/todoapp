@@ -10,7 +10,7 @@
         <!-- Title -->
         <title> @yield("title") </title>
         <!-- Favicon -->
-        <link rel="icon" href="#" type="image/x-icon"/>
+        <link rel="icon" href="{{ setting()->icon_path }}" type="image/x-icon"/>
         <!-- Icons css -->
         <link href="{{URL::asset('dashboard/css/icons.css')}}" rel="stylesheet">
         <!--  Custom Scroll bar-->
@@ -20,35 +20,36 @@
 
     @if (app()->getLocale() == 'ar')
         <!-- Sidemenu css -->
-            <link rel="stylesheet" href="{{URL::asset('dashboard/css-rtl/sidemenu.css')}}">
-            <!--- Style css -->
-            <link href="{{URL::asset('dashboard/css-rtl/style.css')}}" rel="stylesheet">
-            <!--- Dark-mode css -->
-            <link href="{{URL::asset('dashboard/css-rtl/style-dark.css')}}" rel="stylesheet">
-            <!---Skinmodes css-->
-            <link href="{{URL::asset('dashboard/css-rtl/skin-modes.css')}}" rel="stylesheet">
-            <style>
-                body, h1, h2, h3, h4, h5, h6 {
-                    font-family: 'Cairo', sans-serif !important;
-                }
-            </style>
+        <link rel="stylesheet" href="{{URL::asset('dashboard/css-rtl/sidemenu.css')}}">
+        <!--- Style css -->
+        <link href="{{URL::asset('dashboard/css-rtl/style.css')}}" rel="stylesheet">
+        <!--- Dark-mode css -->
+        <link href="{{URL::asset('dashboard/css-rtl/style-dark.css')}}" rel="stylesheet">
+        <!---Skinmodes css-->
+        <link href="{{URL::asset('dashboard/css-rtl/skin-modes.css')}}" rel="stylesheet">
+        <style>
+            body, h1, h2, h3, h4, h5, h6 {
+                font-family: 'Cairo', sans-serif !important;
+            }
+        </style>
     @else
         <!-- Sidemenu css -->
-            <link rel="stylesheet" href="{{URL::asset('dashboard/css/sidemenu.css')}}">
-            <!--- Style css -->
-            <link href="{{URL::asset('dashboard/css/style.css')}}" rel="stylesheet">
-            <!--- Dark-mode css -->
-            <link href="{{URL::asset('dashboard/css/style-dark.css')}}" rel="stylesheet">
-            <!---Skinmodes css-->
-            <link href="{{URL::asset('dashboard/css/skin-modes.css')}}" rel="stylesheet">
+        <link rel="stylesheet" href="{{URL::asset('dashboard/css/sidemenu.css')}}">
+        <!--- Style css -->
+        <link href="{{URL::asset('dashboard/css/style.css')}}" rel="stylesheet">
+        <!--- Dark-mode css -->
+        <link href="{{URL::asset('dashboard/css/style-dark.css')}}" rel="stylesheet">
+        <!---Skinmodes css-->
+        <link href="{{URL::asset('dashboard/css/skin-modes.css')}}" rel="stylesheet">
     @endif
 
+    @toastr_css
     @stack('css')
 
     </head>
 
     <body class="main-body app sidebar-mini">
-    <!-- Loader -->
-    <div id="global-loader">
-        <img src="{{URL::asset('dashboard/img/loader.svg')}}" class="loader-img" alt="Loader">
-    </div>
+        <!-- Loader -->
+        <div id="global-loader">
+            <img src="{{URL::asset('dashboard/img/loader.svg')}}" class="loader-img" alt="Loader">
+        </div>

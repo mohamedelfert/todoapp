@@ -13,10 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return redirect()->route('dashboard.index');
+Auth::routes(['register' => false]);
+
+
+Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']], function () {
+
+    Route::group(['middleware' => 'maintenance'], function () {
+        Route::get('/', function () {
+            return view('front/welcome');
+        });
+    });
+
+    Route::get('maintenance', function () {
+        if (setting()->status === 'open') {
+            return redirect('/');
+        }
+
+        return view('front/maintenance');
+    });
+
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

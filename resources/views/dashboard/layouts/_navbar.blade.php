@@ -3,13 +3,13 @@
     <div class="container-fluid">
         <div class="main-header-left ">
             <div class="responsive-logo">
-                <a href="{{ url('/' . $page='home') }}"><img src="{{URL::asset('dashboard/img/loader.svg')}}"
+                <a href="{{ url('/' . $page='home') }}"><img src="{{ setting()->logo_path }}"
                                                              class="logo-1" alt="logo"></a>
-                <a href="{{ url('/' . $page='home') }}"><img src="{{URL::asset('dashboard/img/loader.svg')}}"
+                <a href="{{ url('/' . $page='home') }}"><img src="{{ setting()->logo_path }}"
                                                              class="dark-logo-1" alt="logo"></a>
-                {{--                <a href="{{ url('/' . $page='home') }}"><img src="#"--}}
+                {{--                <a href="{{ url('/' . $page='home') }}"><img src="{{ setting()->logo_path }}"--}}
                 {{--                                                              class="logo-2" alt="logo"></a>--}}
-                {{--                <a href="{{ url('/' . $page='home') }}"><img src="#"--}}
+                {{--                <a href="{{ url('/' . $page='home') }}"><img src="{{ setting()->logo_path }}"--}}
                 {{--                                                              class="dark-logo-2" alt="logo"></a>--}}
             </div>
             <div class="app-sidebar__toggle" data-toggle="sidebar">
@@ -17,7 +17,7 @@
                 <a class="close-toggle" href="#"><i class="header-icons fe fe-x"></i></a>
             </div>
             <div class="main-header-center mr-3 d-sm-none d-md-none d-lg-block">
-                <input class="form-control" placeholder="Search for anything..." type="search">
+                <input class="form-control" placeholder="{{@trans('main.search_for_anything')}}" type="search">
                 <button class="btn"><i class="fas fa-search d-none d-md-block"></i></button>
             </div>
         </div>
@@ -53,14 +53,14 @@
                                 <span class="avatar  ml-3 align-self-center bg-transparent"><img
                                         src="{{URL::asset('dashboard/img/flags/EG.png')}}" alt="img"></span>
                                 <div class="d-flex">
-                                    <span class="mt-2">Arabic</span>
+                                    <span class="mt-2">@lang('main.arabic')</span>
                                 </div>
                             </a>
                             <a href="{{ LaravelLocalization::getLocalizedURL('en') }}" class="dropdown-item d-flex ">
                                 <span class="avatar  ml-3 align-self-center bg-transparent"><img
                                         src="{{URL::asset('dashboard/img/flags/US.png')}}" alt="img"></span>
                                 <div class="d-flex">
-                                    <span class="mt-2">English</span>
+                                    <span class="mt-2">@lang('main.english')</span>
                                 </div>
                             </a>
                         </div>
@@ -79,9 +79,9 @@
                     <div class="dropdown-menu">
                         <div class="menu-header-content bg-primary text-right">
                             <div class="d-flex">
-                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">Messages</h6>
+                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">@lang('main.messages')</h6>
                                 <span
-                                    class="badge badge-pill badge-warning mr-auto my-auto float-left">Mark All Read</span>
+                                    class="badge badge-pill badge-warning mr-auto my-auto float-left">@lang('main.mark_all_read')</span>
                             </div>
                             <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread
                                 messages</p>
@@ -115,7 +115,7 @@
                             </a>
                         </div>
                         <div class="text-center dropdown-footer">
-                            <a href="text-center">VIEW ALL</a>
+                            <a href="text-center">@lang('main.view_all')</a>
                         </div>
                     </div>
                 </div>
@@ -131,9 +131,9 @@
                     <div class="dropdown-menu">
                         <div class="menu-header-content bg-primary text-right">
                             <div class="d-flex">
-                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">Notifications</h6>
+                                <h6 class="dropdown-title mb-1 tx-15 text-white font-weight-semibold">@lang('main.notifications')</h6>
                                 <span
-                                    class="badge badge-pill badge-warning mr-auto my-auto float-left">Mark All Read</span>
+                                    class="badge badge-pill badge-warning mr-auto my-auto float-left">@lang('main.mark_all_read')</span>
                             </div>
                             <p class="dropdown-title-text subtext mb-0 text-white op-6 pb-0 tx-12 ">You have 4 unread
                                 Notifications</p>
@@ -165,7 +165,7 @@
                             </a>
                         </div>
                         <div class="dropdown-footer">
-                            <a href="">VIEW ALL</a>
+                            <a href="">@lang('main.view_all')</a>
                         </div>
                     </div>
                 </div>
@@ -174,23 +174,25 @@
                 {{--							</div>--}}
                 <div class="dropdown main-profile-menu nav nav-item nav-link">
                     <a class="profile-user d-flex" href="">
-                        <img alt="Photo" src="{{URL::asset('dashboard/img/faces/6.jpg')}}"></a>
+                        <img alt="Photo" src="{{ auth()->user()->image_path }}"></a>
                     <div class="dropdown-menu">
                         <div class="main-header-profile bg-primary p-3">
                             <div class="d-flex wd-100p">
-                                <div class="main-img-user"><img alt="" src="{{URL::asset('dashboard/img/faces/6.jpg')}}"
-                                                                class=""></div>
+                                <div class="main-img-user">
+                                    <img alt="" src="{{ auth()->user()->image_path }}" class=""></div>
                                 <div class="mr-3 my-auto">
-                                    <h6>{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h6><span>{{ auth()->user()->role_name }}</span>
+                                    <h6>{{ auth()->user()->first_name }} {{ auth()->user()->last_name }}</h6>
+                                    <span>{{ auth()->user()->role_name }}</span>
                                 </div>
                             </div>
                         </div>
-                        <a class="dropdown-item" href=""><i class="bx bx-user-circle"></i>Profile</a>
-                        <a class="dropdown-item" href=""><i class="bx bx-cog"></i> Edit Profile</a>
-                        <a class="dropdown-item" href=""><i class="bx bx-slider-alt"></i> Account Settings</a>
+                        <a class="dropdown-item" href="{{ route('dashboard.users.show',auth()->user()->id) }}">
+                            <i class="bx bx-user-circle"></i>@lang('main.profile')</a>
+                        <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}">
+                            <i class="bx bx-cog"></i>@lang('main.settings')</a>
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            <i class="bx bx-log-out"></i> Sign Out </a>
+                            <i class="bx bx-log-out"></i>@lang('main.logout')</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
                         </form>

@@ -1,7 +1,9 @@
 <?php
 
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class UsersTableSeeder extends Seeder
 {
@@ -17,8 +19,16 @@ class UsersTableSeeder extends Seeder
             'last_name' => 'admin',
             'email' => 'super_admin@app.com',
             'password' => bcrypt('123456'),
-            'role_name'  => 'superAdmin',
+            'role_name'  => 'super_admin',
             'status'     => 'active',
         ]);
+
+        $role = Role::create(['name' => 'super_admin','display_name' => 'المدير العام']);
+
+        $permissions = Permission::pluck('id','id')->all();
+
+        $role->syncPermissions($permissions);
+
+        $user->assignRole([$role->id]);
     }
 }
