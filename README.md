@@ -33,4 +33,12 @@ Todo List App With Laravel 8
 1. Visit `localhost:8000` in your browser
 1. Enjoy 🤷‍♂️
 
+### 💡Login As Admin Use:
+- super_admin@app.com - 123456
+
+### 💡Login As User Use:
+- mohamed@yahoo.com - 123456
+
+### Or You Can Register New User From Rigster Page
+
 ## 💡 If you see something to improve, don't hesitate 😊
