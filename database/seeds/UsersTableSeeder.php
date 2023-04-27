@@ -15,19 +15,18 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         $user = User::create([
-            'first_name' => 'super',
-            'last_name' => 'admin',
-            'email' => 'super_admin@app.com',
+            'first_name' => 'mohamed',
+            'last_name' => 'elfert',
+            'email' => 'mohamed@yahoo.com',
             'password' => bcrypt('123456'),
-            'role_name'  => 'super_admin',
-            'status'     => 'active',
+            'role_name' => 'user',
+            'status' => 'active',
         ]);
 
-        $role = Role::create(['name' => 'super_admin','display_name' => 'المدير العام']);
+        $role = Role::create(['name' => 'user', 'display_name' => 'مستخدم']);
 
-        $permissions = Permission::pluck('id','id')->all();
-
-        $role->syncPermissions($permissions);
+        $role->givePermissionTo('user-show', 'user-showProfile', 'user-profile', 'dashboard-index', 'todo-list',
+            'todo-create', 'todo-edit', 'todo-delete', 'todo-show', 'todo-finish');
 
         $user->assignRole([$role->id]);
     }

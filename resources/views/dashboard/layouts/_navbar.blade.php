@@ -188,8 +188,10 @@
                         </div>
                         <a class="dropdown-item" href="{{ route('dashboard.users.show',auth()->user()->id) }}">
                             <i class="bx bx-user-circle"></i>@lang('main.profile')</a>
-                        <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}">
-                            <i class="bx bx-cog"></i>@lang('main.settings')</a>
+                        @can('setting-list')
+                            <a class="dropdown-item" href="{{ route('dashboard.settings.index') }}">
+                                <i class="bx bx-cog"></i>@lang('main.settings')</a>
+                        @endcan
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                             <i class="bx bx-log-out"></i>@lang('main.logout')</a>

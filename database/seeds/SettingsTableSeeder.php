@@ -14,8 +14,8 @@ class SettingsTableSeeder extends Seeder
     {
         DB::table('settings')->delete();
 
-        $data['site_name_ar'] = 'لوحه التحكم';
-        $data['site_name_en'] = 'Dashboard';
+        $data['site_name_ar'] = 'المهام اليومية';
+        $data['site_name_en'] = 'Todo List App';
         $data['logo'] = 'logo.jpg';
         $data['icon'] = 'icon.jpg';
         $data['email'] = 'info@app.com';
