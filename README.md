@@ -32,6 +32,5 @@ Todo List App With Laravel 8
 1. `php artisan serve` or use Laravel Valet or Laravel Homestead
 1. Visit `localhost:8000` in your browser
 1. Enjoy 🤷‍♂️
-1. Visit `localhost:8000` to go Dashboard.
 
 ## 💡 If you see something to improve, don't hesitate 😊
