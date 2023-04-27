@@ -32,6 +32,13 @@
                 </a>
             </li>
 
+            <li class="slide">
+                <a class="side-menu__item" href="{{ route('dashboard.todos.index') }}">
+                    <i class="side-menu__icon fa fa-list"></i>
+                    <span class="side-menu__label">@lang('main.todo_list')</span>
+                </a>
+            </li>
+
             @can('user-list')
                 <li class="side-item side-item-category">@lang('main.users_permissions')</li>
                 @can('user-list')

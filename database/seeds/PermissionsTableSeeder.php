@@ -103,6 +103,42 @@ class PermissionsTableSeeder extends Seeder
                 'display_name' => 'الرئيسيه',
                 'guard_name' => 'web',
                 'routes' => 'dashboard.index',
+            ],[
+                'id' => '17',
+                'name' => 'todo-list',
+                'display_name' => 'قائمه المهام',
+                'guard_name' => 'web',
+                'routes' => 'dashboard.todos.index',
+            ],[
+                'id' => '18',
+                'name' => 'todo-create',
+                'display_name' => 'قائمه المهام',
+                'guard_name' => 'web',
+                'routes' => 'dashboard.todos.create,dashboard.todos.store',
+            ],[
+                'id' => '19',
+                'name' => 'todo-edit',
+                'display_name' => 'قائمه المهام',
+                'guard_name' => 'web',
+                'routes' => 'dashboard.todos.edit,dashboard.todos.update',
+            ],[
+                'id' => '20',
+                'name' => 'todo-delete',
+                'display_name' => 'قائمه المهام',
+                'guard_name' => 'web',
+                'routes' => 'dashboard.todos.destroy',
+            ],[
+                'id' => '21',
+                'name' => 'todo-show',
+                'display_name' => 'قائمه المهام',
+                'guard_name' => 'web',
+                'routes' => 'dashboard.todos.show',
+            ],[
+                'id' => '22',
+                'name' => 'todo-finish',
+                'display_name' => 'قائمه المهام',
+                'guard_name' => 'web',
+                'routes' => 'dashboard.finish',
             ],
         ];
 

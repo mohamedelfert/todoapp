@@ -14,6 +14,9 @@ Route::group(
         /**************************** Dashboard *******************************/
         Route::get('/index', 'DashboardController@index')->name('index');
 
+        Route::resource('todos', 'TodoController');
+        Route::get('finish/{id}', 'TodoController@finish')->name('finish');
+
         /**************************** Users & Roles *******************************/
         Route::resource('users', 'UserController');
         Route::get('/users/profile/{id}', 'UserController@showProfile')->name('users.showProfile');

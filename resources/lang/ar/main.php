@@ -58,10 +58,15 @@ return [
     'created_at' => 'تسجيل في',
     'updated_at' => 'تحديث في',
 
+    'todo_list' => 'قائمه المهام',
+    'add_todo' => 'اضافه مهمه',
+    'edit_todo' => 'تعديل مهمه',
+
     'data_added_successfully' => 'تم اضافه البيانات بنجاح',
     'data_updated_successfully' => 'تم تحديث البيانات بنجاح',
     'data_deleted_successfully' => 'تم حذف البيانات بنجاح',
 
+    'title' => 'العنوان',
     'confirm' => 'تأكيد',
     'cancel' => 'إلغاء',
     'edit' => 'تعديل',

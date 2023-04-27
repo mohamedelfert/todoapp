@@ -98,14 +98,6 @@
                                             </button>
 
                                         </form>
-                                        <div class="row row-xs">
-                                            <div class="col-sm-6">
-                                                <button class="btn btn-block"><i class="fab fa-facebook-f"></i> Signup with Facebook</button>
-                                            </div>
-                                            <div class="col-sm-6 mg-t-10 mg-sm-t-0">
-                                                <button class="btn btn-danger btn-block"><i class="fab fa-google"></i> Signup with Google</button>
-                                            </div>
-                                        </div>
 
                                         <div class="main-signup-footer mt-5">
                                             <p>Already have an account? <a

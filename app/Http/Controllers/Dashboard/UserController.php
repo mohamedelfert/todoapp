@@ -183,6 +183,6 @@ class UserController extends Controller
         $user->update($data);
 
         toastr()->warning(trans('main.data_deleted_successfully'));
-        return redirect()->route('dashboard.users.index');
+        return redirect()->route('dashboard.index');
     }
 }

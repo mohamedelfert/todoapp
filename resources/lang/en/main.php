@@ -58,10 +58,15 @@ return [
     'created_at' => 'Created At',
     'updated_at' => 'Updated At',
 
+    'todo_list' => 'Todo List',
+    'add_todo' => 'Add Todo',
+    'edit_todo' => 'Edit Todo',
+
     'data_added_successfully' => 'Data Added Successfully',
     'data_updated_successfully' => 'Data Updated Successfully',
     'data_deleted_successfully' => 'Data Deleted Successfully',
 
+    'title' => 'Title',
     'confirm' => 'Confirm',
     'cancel' => 'Cancel',
     'edit' => 'Edit',

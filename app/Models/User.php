@@ -19,6 +19,10 @@ class User extends Authenticatable
 
     protected $appends = ['image_path'];
 
+    public function todos(){
+        return $this->hasMany(Todo::class);
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
